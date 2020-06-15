@@ -1,4 +1,4 @@
-# Mail Keep Utility
+# Mail Store Utility
 <a>
     <img src="https://img.shields.io/badge/stability-stable-green.svg?style=flat-square"
     alt="stability" />
