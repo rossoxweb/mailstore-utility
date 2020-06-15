@@ -32,6 +32,12 @@ without using the Desktop Client for Windows.
 - [Deployment](#layering)
   - [Local Deploy](#local-deploy)
   - [Web Server](#web-server)
+- [Usage](#usage)
+  - [Login](#login)
+  - [Dashboard](#dashboard)
+  - [Check Storage Usage](check-storage-usage)
+  - [Change Archive User Password](change-archive-user-password)
+  - [Change Selected Profile Password](change-selected-profile-password)
   - [Logout](logout)
 - [Contributing](#contributing)
 - [Authors](#authors)
@@ -208,6 +214,86 @@ Restart Apache:
 ```
 systemctl restart httpd
 ```
+
+## Usage
+
+Here an example with rossoXweb branding
+
+#### Login
+
+For login it's always needed:
+- istance name
+- istance's user name
+- user password
+
+
+
+#### Dashboard
+
+
+#### Check User Storage
+
+Show user storage:
+
+#### Change User Password
+
+In the section **Utente Mail Keep** click **Cambia Password**:
+
+Insert the new password and respect the validation directives and you will be redirected to login:
+
+#### Change Selected Profile Password
+
+In the section **Profilo Casella di Posta** select the interested profile and then click **Cambia Password**:
+
+## Usage
+
+Here an example with rossoXweb branding
+
+#### Login
+
+For login it's always needed:
+- istance name
+- istance's user name
+- user password
+
+![login](demo/login.gif)
+
+#### Dashboard
+
+
+![dashboard](demo/dashboard.gif)
+
+
+#### Check User Storage
+
+Show user storage:
+
+![storage](demo/storage.gif)
+
+#### Change User Password
+
+In the section **Utente Mail Keep** click **Cambia Password**:
+
+![change-pwd-btn](demo/change-pwd-btn.gif)
+
+Insert the new password and respect the validation directives and you will be redirected to login:
+
+![new-user-pwd](demo/new-user-pwd.gif)
+
+#### Change Selected Profile Password
+
+In the section **Profilo Casella di Posta** select the interested profile and then click **Cambia Password**:
+
+![change-profile-btn](demo/change-profile-btn.gif)
+
+Insert the new password in the form and if you inserted correctly the password, you will see the success page:
+
+#### Logout
+
+Click on user name on the right-top bar and select **Esci**:
+
+![logout](demo/logout.gif)
+
 
 ## Contributing
 
