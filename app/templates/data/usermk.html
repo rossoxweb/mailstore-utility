@@ -1,0 +1,124 @@
+{% extends 'data/data.html' %}
+
+{% block header %}
+  <h1>{% block title %}Password Utente{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<div class="ms-login-center-div">
+        <div class="">
+            <div class="card-block container-fluid">
+                <div class="col-xs-12">
+                    {% for message in get_flashed_messages() %}
+                        <label class="ms-login-page-label ms-foreground-accent" id="login-error-feedback">{{ message }}</label>
+                    {% endfor %}
+                    <form method="post" class="ng-valid ng-touched ng-dirty" onsubmit="alert('La password è stata cambiata! Verrai reindirizzato al login!')">
+                        <div class="row">
+                            <div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+                                <label class="ms-sidebar-section-title ms-foreground-accent">                 Nuova Password           </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"></span>
+                                <input class="form-control ms-login-input-box ng-valid ng-dirty ng-touched"
+                                       id="password-new" name="password-new"
+                                       placeholder="Inserisci qui..." type="password"
+                                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+                                <label class="ms-sidebar-section-title ms-foreground-accent">                 Conferma Password           </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"></span>
+                                <input class="form-control ms-login-input-box ng-valid ng-dirty ng-touched" id="password-confirm" name="password-confirm" placeholder="Inserisci qui..." type="password" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <button class="ms-btn-primary pull-right ms-background-accent ms-hover-background-dark-accent" id="login-login-button" type="submit" >Modifica Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="message" class="form-group row">
+          <h6>La password deve contenere:</h6>
+          <p id="letter" class="invalid"><b>1 o più</b> lettere <b>minuscole</b></p>
+          <p id="capital" class="invalid"><b>1 o più</b> lettere <b>maiuscole</b></p>
+          <p id="number" class="invalid"><b>1 o più</b> numeri</p>
+          <p id="length" class="invalid"><b>8 o più</b> caratteri</p>
+        </div>
+    </div>
+
+
+    <script>
+        var myInput = document.getElementById("password-new");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        document.getElementById("message").style.display = "block";
+
+
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() {
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+          }
+
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+          } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+          }
+
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+
+          // Validate length
+          if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+        }
+
+
+        var password = document.getElementById("password-new"), confirm_password = document.getElementById("password-confirm");
+
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Le password non corrispondono!");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+    </script>
+{% endblock %}

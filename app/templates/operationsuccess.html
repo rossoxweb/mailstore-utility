@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Successo{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <style>
+          body {
+            text-align: center;
+            padding: 40px 0;
+            background: #EBF0F5;
+          }
+            h1 {
+              color: #D1232A;
+              font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+              font-weight: 900;
+              font-size: 40px;
+              margin-bottom: 10px;
+            }
+            p {
+              color: #6AABCE;
+              font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+              font-size:20px;
+              margin: 0;
+            }
+          i {
+            color: #D1232A;
+            font-size: 100px;
+            line-height: 200px;
+            margin-left:-15px;
+          }
+          .whitecard {
+            background: white;
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px #a4acb4;
+            display: inline-block;
+            margin: 0 auto;
+          }
+    </style>
+    <div class="whitecard">
+    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+        <i class="checkmark">✓</i>
+    </div>
+        <p>L'operazione ha avuto successo!<br/> Verrai reindirizzato alla dashboard in pochi secondi</p>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        window.setTimeout(function(){
+            window.location.href = "/data/select";
+        }, 3000);
+    </script>
+{% endblock %}

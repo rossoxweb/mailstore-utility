@@ -1,0 +1,63 @@
+
+.ms-foreground-accent, .ms-foreground-accent:focus, .ms-foreground-accent:active {
+  color: #6aabce;
+  fill: #6aabce;
+}
+
+.ms-border-accent {
+  border-color: #6aabce;
+}
+
+.ms-background-accent {
+  background-color: #6aabce;
+}
+
+.ms-foreground-dark-accent {
+  color: #126d9c;
+  fill: #126d9c;
+}
+
+.ms-background-dark-accent {
+  background-color: #126d9c;
+}
+
+.ms-hover-foreground-accent:hover {
+  color: #6aabce;
+  fill: #6aabce;
+}
+
+.ms-hover-foreground-accent:hover a {
+  color: #6aabce;
+}
+
+.ms-hover-background-accent:hover {
+  background-color: #6aabce;
+}
+
+.ms-hover-foreground-dark-accent:hover {
+  color: #126d9c;
+  fill: #126d9c;
+}
+
+.ms-hover-background-dark-accent:hover {
+  background-color: #126d9c;
+}
+
+.ms-checkbox :checked ~ span,
+.ms-radio :checked ~ span {
+  border-color: #6aabce;
+  background-color: #6aabce;
+}
+
+.ms-spinner-accent {
+  border-top-color: #6aabce;
+  border-right-color: rgba(106, 171, 206, 0.1);
+  border-bottom-color: rgba(106, 171, 206, 0.1);
+  border-left-color: rgba(106, 171, 206, 0.1);
+}
+
+.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
+.post > header > div:first-of-type { flex: auto; }
+.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
+.post .about { color: slategray; font-style: italic; }
+.post .body { white-space: pre-line; }

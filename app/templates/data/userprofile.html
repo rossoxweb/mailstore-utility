@@ -1,0 +1,66 @@
+{% extends 'data/data.html' %}
+
+{% block header %}
+  <h1>{% block title %}Profilo Utente {% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+	<div class="ms-login-center-div">
+        <div class="">
+            <div class="card-block container-fluid">
+                <div class="col-xs-12">
+                    {% for message in get_flashed_messages() %}
+                        <label class="ms-login-page-label ms-foreground-accent" id="login-error-feedback">{{ message }}</label>
+                    {% endfor %}
+                    <form method="post" class="ng-valid ng-touched ng-dirty">
+                        <div class="row">
+                            <div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+                                <label class="ms-sidebar-section-title ms-foreground-accent">Nuova Password</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"></span>
+                                <input class="form-control ms-login-input-box ng-valid ng-dirty ng-touched" id="password-new" name="password-new" placeholder="Inserisci qui..." type="password" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+                                <label class="ms-sidebar-section-title ms-foreground-accent">Conferma Password</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"></span>
+                                <input class="form-control ms-login-input-box ng-valid ng-dirty ng-touched" id="password-confirm" name="password-confirm" placeholder="Inserisci qui..." type="password" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <button class="ms-btn-primary pull-right ms-background-accent ms-hover-background-dark-accent" id="confirm-button" type="submit">Modifica Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var password = document.getElementById("password-new"), confirm_password = document.getElementById("password-confirm");
+
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Le password non corrispondono!");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+
+    </script>
+{% endblock %}
+

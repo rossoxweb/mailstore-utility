@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Seleziona Opzione{% endblock %}</h1>
+{% endblock %}
+
+
+{% block topbar %}
+
+<!-- TOP BAR --->
+	<div class="ms-top-nav-page-header">
+		<header class="ms-background-dark-accent" id="top-nav-header">
+		<div class="pull-left">
+			<div id="top-nav-logo">
+				<a href="{{ url_for('data.get_data') }}">
+					<img src="{{ url_for('static', filename='img/logo.png') }}">
+				</a>
+			</div>
+			<div class="" id="top-nav-title">Seleziona Opzione</div>
+		</div>
+		<div class="pull-right">
+				<div class="btn-group" id="top-nav-user-menu">
+					<div class="btn-group" dropdown="">
+						<a class="ms-top-nav-user-link" dropdowntoggle="" id="top-nav-user-menu-link" placement="bottom right" aria-haspopup="true" aria-expanded="true">
+							<div class="hidden-md-down col-sm-12 col-xs-12 ms-top-nav-user ms-hover-background-accent" id="top-nav-user-menu-user">                             {{ user }}
+								<ms-icon class="ms-icon-20px ms-icon-white ms-icon-down-1px" name="user" style="padding: 5px">
+									<dynamic-comp>
+										<svg xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 92 92" id="Layer_1" version="1.1" viewBox="0 0 92 92" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+											<path d="M46,57.1c14.8,0,26.9-12.1,26.9-27C72.9,15.1,60.8,3,46,3S19.1,15.1,19.1,30C19.1,45,31.2,57.1,46,57.1z
+											M46,11c10.4,0,18.9,8.5,18.9,19c0,10.5-8.5,19-18.9,19s-18.9-8.5-18.9-19C27.1,19.5,35.6,11,46,11z M58.5,59.7
+											c-1.3-0.4-2.8-0.1-3.8,0.8L46,67.9l-8.7-7.4c-1.1-0.9-2.5-1.2-3.8-0.8C27.9,61.5,0,71.1,0,85c0,2.2,1.8,4,4,4h84c2.2,0,4-1.8,4-4
+											C92,71.1,64.1,61.5,58.5,59.7z M10.1,81c4.4-4.7,15-9.9,23.8-12.9l9.5,8.1c1.5,1.3,3.7,1.3,5.2,0l9.5-8.1
+											c8.8,3.1,19.4,8.3,23.8,12.9H10.1z" id="XMLID_1253_">
+											</path>
+										</svg>
+									</dynamic-comp>
+								</ms-icon>
+							</div>
+							<div class="hidden-lg-up col-sm-2 col-xs-2 ms-top-nav-icon-mobile" id="top-nav-user-menu-user-mobile" style="padding-top: 11px">
+								<ms-icon class="ms-icon-24px ms-icon-white" name="user">
+									<dynamic-comp>
+										<svg xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 92 92" id="Layer_1" version="1.1" viewBox="0 0 92 92" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+											<path d="M46,57.1c14.8,0,26.9-12.1,26.9-27C72.9,15.1,60.8,3,46,3S19.1,15.1,19.1,30C19.1,45,31.2,57.1,46,57.1z
+												M46,11c10.4,0,18.9,8.5,18.9,19c0,10.5-8.5,19-18.9,19s-18.9-8.5-18.9-19C27.1,19.5,35.6,11,46,11z M58.5,59.7
+												c-1.3-0.4-2.8-0.1-3.8,0.8L46,67.9l-8.7-7.4c-1.1-0.9-2.5-1.2-3.8-0.8C27.9,61.5,0,71.1,0,85c0,2.2,1.8,4,4,4h84c2.2,0,4-1.8,4-4
+												C92,71.1,64.1,61.5,58.5,59.7z M10.1,81c4.4-4.7,15-9.9,23.8-12.9l9.5,8.1c1.5,1.3,3.7,1.3,5.2,0l9.5-8.1
+												c8.8,3.1,19.4,8.3,23.8,12.9H10.1z" id="XMLID_1253_">
+											</path>
+										</svg>
+									</dynamic-comp>
+								</ms-icon>
+							</div>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right ms-top-nav-dropdown" id="menu" role="menu" style="display: none;">
+							<li role="menuitem">
+								<a class="dropdown-item" id="top-nav-user-menu-help-link" target="_blank" href="https://github.com/rossoxweb/mailstore-utility/README.md">                                  Guida                             </a>
+							</li>
+							<li role="menuitem">
+								<a class="dropdown-item" id="top-nav-user-menu-about-link" target="_blank" href="">                                 Informazioni su                             </a>
+							</li>
+							<li role="menuitem">
+								<a class="dropdown-item" id="top-nav-user-menu-sign-out-link" routerlink="/login" href="{{ url_for('auth.logout') }}">                                 Esci                             </a>
+							</li>
+						</ul>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+<!-- END TOP BAR --->
+
+{% endblock %}
+
+
+{% block content %}
+
+	<!-- OPTION --->
+	<div class="ms-login-center-div">
+		<div class="ms-sidebar-section-div">
+			<div class="row">
+				<div class="col-sm-1 col-xs-1" style="padding-top: 3px; width: 40px; position: initial">
+					<ms-icon class="ms-icon-20px ms-foreground-accent">
+						<dynamic-comp>
+							<svg xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 92 92" id="Layer_1" version="1.1" viewBox="0 0 92 92" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+								<path d="M46,57.1c14.8,0,26.9-12.1,26.9-27C72.9,15.1,60.8,3,46,3S19.1,15.1,19.1,30C19.1,45,31.2,57.1,46,57.1z
+									M46,11c10.4,0,18.9,8.5,18.9,19c0,10.5-8.5,19-18.9,19s-18.9-8.5-18.9-19C27.1,19.5,35.6,11,46,11z M58.5,59.7
+									c-1.3-0.4-2.8-0.1-3.8,0.8L46,67.9l-8.7-7.4c-1.1-0.9-2.5-1.2-3.8-0.8C27.9,61.5,0,71.1,0,85c0,2.2,1.8,4,4,4h84c2.2,0,4-1.8,4-4
+									C92,71.1,64.1,61.5,58.5,59.7z M10.1,81c4.4-4.7,15-9.9,23.8-12.9l9.5,8.1c1.5,1.3,3.7,1.3,5.2,0l9.5-8.1
+									c8.8,3.1,19.4,8.3,23.8,12.9H10.1z" id="XMLID_1253_">
+								</path>
+							</svg>
+						</dynamic-comp>
+					</ms-icon>
+				</div>
+				<div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+					<label class="ms-sidebar-section-title ms-foreground-accent">                 Utente Mail Keep             </label>
+				</div>
+			</div>
+		</div>
+		<div style="overflow-x: auto">
+			<div class="row ms-tree-view-row" style="width: calc(100% - 5px); padding-left: 28px;">
+				<div class="ms-tree-view-node-container ms-hover-foreground-accent">              
+					<div>
+						<p>In questa sezione è possibile modificare la password dell'utente per accedere al pannello Web di Mail Keep</p>
+					</div>
+				</div>
+				<button class="ms-btn-primary center ms-background-accent ms-hover-background-dark-accent" id="change-usr-pwd-view-button" type="button" onclick="window.location.href='{{ url_for('data.change_user_password') }}'" >                 Cambia Password             </button>
+			</div>
+		</div>
+		<div class="ms-sidebar-section-div">
+			<div class="row">
+				<div class="col-sm-1 col-xs-1" style="padding-top: 3px; width: 40px; position: initial">
+					<ms-icon class="ms-icon-20px ms-foreground-accent">
+						 <img  src="{{ url_for('static', filename='img/storage-icon.png') }}" style="height: 20px; width: 20px;">
+					</ms-icon>
+				</div>
+				<div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+					<label class="ms-sidebar-section-title ms-foreground-accent">                 Memoria Utilizzata           </label>
+				</div>
+			</div>
+		</div>
+		<div style="overflow-x: auto">
+			<div class="row ms-tree-view-row" style="width: calc(100% - 5px); padding-left: 28px;">
+				<div class="ms-tree-view-node-container ms-hover-foreground-accent">
+					<div class="ms-tree-view-node" title="Archivio personale">
+						<p>Memoria utilizzata dall'utente: <b><label id="user-storage"></label></b> MegaByte</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ms-sidebar-section-div">
+			<div class="row">
+				<div class="col-sm-1 col-xs-1" style="padding-top: 3px; width: 40px; position: initial">
+					<ms-icon class="ms-icon-20px ms-foreground-accent">
+						 <img  src="{{ url_for('static', filename='img/profile-icon.png') }}" style="height: 20px; width: 20px;">
+					</ms-icon>
+				</div>
+				<div class="col-sm-10 col-xs-10" style="padding-left: 0; position: initial">
+					<label class="ms-sidebar-section-title ms-foreground-accent">                 Profilo Casella di Posta            </label>
+				</div>
+			</div>
+		</div>
+		<div style="overflow-x: auto">
+			<div class="row ms-tree-view-row" style="width: calc(100% - 5px); padding-left: 28px;">
+				<div class="ms-tree-view-node-container ms-hover-foreground-accent">
+					<div class="ms-tree-view-node" title="Profilo">
+						<p>Seleziona un profilo per verificare le informazioni</p>
+						<select id="profiles"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-content">
+			<div class="ms-modal-title ms-foreground-accent">Dati Profilo</div>
+				<div class="ms-modal-padding">
+					<label class="ms-modal-label">Ultima Esecuzione Giornaliera</label>
+					<div>
+						<div style="padding-top: 5px; padding-left: 0px;">
+							<table class="table">
+							<thead>
+							  <tr>
+								<th>Risultato</th>
+								<th>Inizio</th>
+								<th>Fine</th>
+							  </tr>
+							</thead>
+							<tbody id="tasks">
+							</tbody>
+						  </table>
+						</div>
+					</div>
+				</div>
+				<div class="ms-modal-padding" id="password-div" style="padding-top: 10px; padding-bottom: 10px;">
+					<label class="ms-modal-label">Cambia Password</label>
+					<div>
+						<div class="checkbox-inline ms-checkbox" id="change-profile-pwd-div" style="padding-top: 5px; padding-left: 0px;">
+							<button class="ms-btn-primary center ms-background-accent ms-hover-background-dark-accent" id="change-profile-pwd-btn" type="button">Clicca qui</button>
+							<label id="non-imap-label">Non è possibile modificare la password per il tipo di profilo selezionato</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END OPTION --->
+{% endblock %}
+
+{% block script %}
+	<script>
+	$("#change-profile-pwd-btn").hide();
+	$('#non-imap-label').hide();
+
+	$(document).ready(function() {
+		console.log( "ready!" );
+
+		// top bar menu
+		$("#top-nav-user-menu-user,#top-nav-user-menu-user-mobile").click(function(){
+			$("#menu").toggle();
+		  });
+
+		// retrieve storage usage
+		$.ajax({
+			url: '/data/getstorage',
+			data: { type: $(this).data('type') },
+			method: 'POST',
+			beforeSend: function() {
+				$('#user-storage').html("<img src='{{ url_for('static', filename='img/ajax-loader.gif') }}' />");
+			},
+		  })
+		  .done((res) => {
+			var userStorage = res;
+			$('#user-storage').html(userStorage);
+		  })
+		  .fail((err) => {
+			console.log(err)
+		  });
+
+		// retrieve existing profiles names
+		$.ajax({
+			url: '/data/getuserprofiles',
+			data: { type: $(this).data('type') },
+			method: 'POST',
+		  })
+		  .done((res) => {
+			var json = JSON.stringify(res);
+			var obj = jQuery.parseJSON(json);
+			$.each(obj, function(key, value) {
+				var profileName = value['name'];
+				var profileId = value['id'];
+				$('#profiles')
+				 .append($("<option></option>")
+							.attr("value",profileId)
+							.text(profileName));
+			});
+
+			// pass selected ID to getStatus and getConnector
+			$(function () {
+				$('#profiles').on('change', function(){
+					var profileId = $(this).children("option:selected").val();
+					getStatus(profileId);
+					getConnector(profileId);
+					$("#change-profile-pwd-btn").click(profileId, profileID);
+					const html = `
+						<td><img src='{{ url_for('static', filename='img/ajax-loader.gif') }}' /></td>
+						<td><img src='{{ url_for('static', filename='img/ajax-loader.gif') }}' /></td>
+						<td><img src='{{ url_for('static', filename='img/ajax-loader.gif') }}' /></td>
+						`
+					$('#tasks').html(html);
+				}).trigger('change');
+			});
+		  })
+		  .fail((err) => {
+			console.log(err)
+		  });
+
+	});
+
+	// retrieve results from async function and inject them in HTML
+	function getStatus(profileId) {
+		$.ajax({
+			url: `/data/getprofileresult/${profileId}`,
+			method: 'POST'
+		})
+		.done((res) => {
+			console.log(res);
+			const risultati = `
+				<tr>
+					<td>${res.result}</td>
+					<td>${res.startTime}</td>
+					<td>${res.completeTime}</td>
+				</tr>`;
+				$('#tasks').html(risultati);
+
+				$('#password-div').show();
+			})
+		.fail(function(xhr, textStatus, errorThrown) {
+			console.log(xhr);
+			const nodata = `
+			  <tr>
+				<td>Non ci sono dati</td>
+			  </tr>`;
+			$('#tasks').html(nodata);
+			$('#non-imap-label').show();
+		});
+
+	}
+
+	// retrieve value of connector
+	function getConnector(profileId) {
+		$.ajax({
+			url: `/data/getprofilesconnector/${profileId}`,
+			method: 'POST'
+		})
+		.done((res) => {
+			// if IMAP show button for change password
+			if (res === 'IMAP'){
+				$("#non-imap-label").hide();
+				$("#change-profile-pwd-btn").show();
+			}else{
+				// else hide button for change password
+				$("#change-profile-pwd-btn").hide();
+				$('#non-imap-label').show();
+			}
+
+		})
+		.fail((err) => {
+			console.log(err)
+		});
+	}
+
+	// pass selected ID value in the URL, to update it
+	function profileID(profileId) {
+		var url = `/data/changeprofilepassword/` + profileId.data;
+		window.location.href = url;
+	}
+
+	</script>
+
+{% endblock %}
+
