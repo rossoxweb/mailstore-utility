@@ -226,36 +226,6 @@ For login it's always needed:
 - istance's user name
 - user password
 
-
-
-#### Dashboard
-
-
-#### Check User Storage
-
-Show user storage:
-
-#### Change User Password
-
-In the section **Utente Mail Keep** click **Cambia Password**:
-
-Insert the new password and respect the validation directives and you will be redirected to login:
-
-#### Change Selected Profile Password
-
-In the section **Profilo Casella di Posta** select the interested profile and then click **Cambia Password**:
-
-## Usage
-
-Here an example with rossoXweb branding
-
-#### Login
-
-For login it's always needed:
-- istance name
-- istance's user name
-- user password
-
 ![login](demo/login.gif)
 
 #### Dashboard
